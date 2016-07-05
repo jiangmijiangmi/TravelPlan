@@ -80,4 +80,3 @@ article (**id**, **user_id**, **title**, **content**, **created_at**, **is_top**
 admin (**username**, **password**)
 
 log (**admin_name**, **content**, **created_at**)
-
