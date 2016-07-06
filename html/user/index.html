@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Login</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/regist.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>个人中心</title>
+</head>
+<body>
+    <div class="header"></div>
+
+    <div class="wrapper jsc-sidebar-content jsc-sidebar-pulled">
+        <div>
+            <a href="#" class="icon-menu link-menu jsc-sidebar-trigger">按钮</a>
+        </div>
+    </div>
+
+    <div class="sidebar jsc-sidebar" id="jsi-nav">
+        <ul class="sidebar-list">
+            <li><a href="###" class="current">SidebarJS</a></li>
+            <li><a href="###">说明</a></li>
+            <li><a href="###">下载</a></li>
+            <li><a href="###">代码</a></li>
+            <li><a href="###">dowebok.com</a></li>
+        </ul>
+    </div>
+
+    <div class="footer"></div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/user_index.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".header").load("../header.html", function () {
+            $(".nav-home").addClass(active);
+        });
+        $(".footer").load("footer.html");
+    });
+</script>
+
+</body>
+</html>
