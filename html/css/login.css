@@ -45,15 +45,13 @@ body {
     width: 340px;
     margin-top: 45px;
     display: block;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     height: 350px;
-    opacity: 0.8;
     -webkit-border-radius: 15px 9px;
     -moz-border-radius: 15px 9px;
     border-radius: 15px 9px;
-    border: solid 1px;
-    border-color: rgb(179, 179, 179);
+    border: 1px solid rgb(179, 179, 179);
 }
 .main-window .login-section {
     margin: 30px auto 0 auto;
@@ -81,9 +79,16 @@ body {
     width: 100%;
 }
 
-.icon  img {
+.icon img {
     height: 49px;
-    padding: 0 10px 0 10px;
+    width: 49px;
+    margin: 0 10px 0 10px;
+    display: inline-block;
+    border: 1px solid gray;
+    -webkit-border-radius: 49px;
+    -moz-border-radius: 49px;
+    border-radius:49px;
+    background-color: rgba(215, 215, 215, 1);
 }
 
 .no-accout a {
