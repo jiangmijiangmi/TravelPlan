@@ -23,6 +23,7 @@
 
 </head>
 <body>
+    <img id="background" src="../layout/web_login_bg.jpg" />
     <div class="container">
         <div class="title-window">
                 <img src = "../layout/login_logo.png">
@@ -32,15 +33,22 @@
            <div class="login-section center-block">
                <form id="login" action="" name="login">
                    <div class="form-group">
-                       <input class="form-control" type="text" placeholder="username" name="username" id="username">
+                       <input class="form-control" type="text" placeholder="用户名" name="username" id="username">
                    </div>
                    <div class="form-group">
-                       <input class="form-control" type="password" placeholder="password" name="password" id="password">
+                       <input class="form-control" type="password" placeholder="密码" name="password" id="password">
                    </div>
                    <button type="submit" class="btn btn-success btn-block">登录</button>
                </form>
            </div>
-           <div class="other-login-section">
+           <div class="other-login-section clearfix center-block">
+               <a href="#" class="icon" id="qq"><img src="../layout/qq.png"></a>
+               <a href="#" class="icon" id="wechat"><img src="../layout/wechat.png"></a>
+               <a href="#" class="icon" id="weibo"><img src="../layout/weibo.png"></a>
+               <a href="#" class="icon" id="taobao"><img src="../layout/taobao.png"></a>
+           </div>
+           <div class="no-accout center-block clearfix">
+                <a href="regist.html">立即注册</a>
            </div>
        </div>
     </div>
@@ -50,3 +58,4 @@
 <script src="../js/jquery-2.1.4.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
+</html>
