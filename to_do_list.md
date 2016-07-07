@@ -11,6 +11,7 @@
 index
 header
 footer
+结伴游
 
 ####许宏旭
 travel assistant
@@ -20,5 +21,4 @@ users
 destination 官方攻略
 
 ####CZT
-结伴游
 旅游攻略
