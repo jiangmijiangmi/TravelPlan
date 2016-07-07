@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>个人中心</title>
+
+    <!-- Bootstrap -->
+    <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/user_index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>个人中心</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="user_nav"></div>
+        <div class="user_main">
+            <div class="user_title clearfix">
+                <p class="pull-left">个人资料</p>
+                <a href="#" class="btn btn-success pull-right">编辑资料</a>
+            </div>
+            <div class="user_data">
+                <ul>
+                    <li class="clearfix">
+                        <div class="pull-left">用户名称:</div>
+                        <div class="pull-left"> lvxiaoxin </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">性别:</div>
+                        <div class="pull-left"> 男 </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">生日:</div>
+                        <div class="pull-left"> 1996 年 04 月 05日</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">住址:</div>
+                        <div class="pull-left">北京市海淀区新街口外大街19号北京师范大学</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">职业:</div>
+                        <div class="pull-left">学生</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">加入时间:</div>
+                        <div class="pull-left">2016年 07月 06日</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!--<div class="footer"></div>-->
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/user_index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".header").load("../header.html");
+        $(".user_nav").load("./user_nav.html", function() {
+            $("#index").addClass("active");
+        });
+        $(".footer").load("../footer.html");
+    });
+</script>
+</body>
+</html>
