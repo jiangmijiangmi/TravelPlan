@@ -1,0 +1,83 @@
+body {
+    margin-top: 50px;
+}
+
+.carousel .item {
+    max-height: 640px;
+    overflow: hidden;
+}
+
+.carousel .item img{
+    width: 100%;
+    height: auto;
+}
+
+.search {
+    margin: 16px;
+}
+
+.carousel .search {
+    position: absolute;
+    left: 50%;
+    margin-left: -310px;
+    width: 620px;
+    height: 240px;
+    z-index: 10;
+    bottom: 100px;
+}
+
+.search .input-group {
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.4);
+}
+
+.carousel .search .logo {
+    margin-bottom: 16px;
+}
+
+.search .input-group {
+    border-radius: 6px;
+}
+
+.main article {
+    margin-top: 48px;
+}
+
+.nav-continent {
+    margin-top: 20px;
+}
+
+.country-list li {
+    display: block;
+    list-style-type: none;
+}
+
+.country-list li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #666;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.country-list li a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+.dest {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.intro {
+    margin: 32px;
+}
+
+.strategy {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
