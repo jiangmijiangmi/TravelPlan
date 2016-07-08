@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".header").load("../header.html", function () {
+                $(".nav-home").addClass("active");
+            });
+            $(".footer").load("../footer.html");
+        });
+    </script>
+    <style>
+    #photobtn:hover{
+        background-color:rgba(255,100,100,0.6);
+    }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container" style="margin-top:70px;">
+        <div>
+            <span><a href="#">结伴</a><span class="glyphicon glyphicon-chevron-right"></span><span style="color:orange;">发起结伴</span></span>
+        </div>
+        <div style="margin-top:30px;">
+            <span style="font-size:30px;">发起结伴</span>
+            <span>（一个真诚的请求，才会赢的更多靠谱的旅伴）</span>
+        </div>
+        <div style="margin-top:20px;margin-bottom:20px;"><a href="#" style="color:orange;">如何更高效地结交靠谱的旅伴<span class="glyphicon glyphicon-question-sign"></span></a></div>
+        <form action="" method="post">
+            <div class="form-group row">
+                <label for="sentence" class="col-sm-2 control-label">*活动标题</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control"  id="sentence" placeholder="一句话开始一段靠谱的旅程">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-2 control-label">*联系方式</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  id="phone" placeholder="手机">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  id="QQ" placeholder="QQ">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  id="wechat" placeholder="微信">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="destination" class="col-sm-2 control-label">*目的地</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control"  id="destination" placeholder="输入并选择目的地">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="start" class="col-sm-2 control-label">*出发地</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control"  id="start" placeholder="输入并选择出发地">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="date" class="col-sm-2 control-label">*出发时间</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control"  id="date" placeholder="出发日期">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="day" class="col-sm-2 control-label">*活动天数</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control"  id="day">
+                </div>
+                <div class="col-sm-1" style="margin-top:5px;">天</div>
+            </div>
+            <div class="form-group row">
+                <label for="person" class="col-sm-2 control-label">*限制人数</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control"  id="person">
+                </div>
+                <div class="col-sm-1" style="margin-top:5px;">人</div>
+            </div>
+            <div class="form-group row">
+                <label for="text" class="col-sm-2 control-label">*活动标题</label>
+                <div class="col-sm-10">
+                    <textarea id="text" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-2 col-sm-offset-2"><a href="#"><span id="photobtn" class="glyphicon glyphicon-plus" style="border:2px solid black;font-size:30px;padding:10px 10px 10px 12px;"></span></a></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-2" style="margin-top:10px;">可上传最多5张个人 and 结伴相关图片吸引更多蜂蜂参与</div>
+            </div>
+            <div class="form-group row" style="margin-top:10px;">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">发表结伴</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>

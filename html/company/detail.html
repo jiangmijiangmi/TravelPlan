@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".header").load("../header.html", function () {
+                $(".nav-home").addClass("active");
+            });
+            $(".footer").load("../footer.html");
+        });
+    </script>
+    <style>
+        div div span a{
+            color:white;
+        }
+        .title{
+            width:50%;
+            border:2px solid yellow;
+        }
+        .title:hover{
+            background-color:rgba(155,155,155,0.5);
+        }
+        .fl{
+            width:60%;
+            position:absolute;
+            bottom:-15px;
+            left:20%;
+            color:yellow;
+            font-size:30px;
+        }
+        .add:hover{
+            background-color:rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div style="margin-top:50px;position:relative;">
+        <div style="position:absolute;font-size:20px;margin-left:20px;">
+            <span><a href="#">结伴首页</a></span>
+            <span><a href="#">我的结伴</a></span>
+            <span><a href="#">他的结伴</a></span>
+        </div>
+        <img class="img-responsive" style="height:100%;width:100%;" src="../images/index1.jpg" />
+        <div style="position:absolute;bottom:200px;left:50%;margin-left:-230px;">
+            <div style="font-size:30px;">西安青海敦煌，8月中旬，缺1人</div>
+            <div style="font-size:25px;text-align:center;">129人浏览 ,1人报名, 1人关注</div>
+        </div>
+        <div class="fl">
+            <div class="text-center pull-left title">我要报名</div>
+            <div class="text-center pull-left title">关注此结伴</div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:40px;" >
+        <div class="row" style="font-size:20px;">
+            <div class="col-sm-6">
+                <div>出发时间：2016-08-15</div>
+                <div>目的地：敦煌|张掖|青海湖|西安</div>
+                <div>希望人数：4人</div>
+            </div>
+            <div class="col-sm-6" style="font-size:20px;">
+                <div>大约：7天</div>
+                <div>出发地：厦门</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center" style="font-size:30px;">联系方式 ------报名后可见-------</div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="clearfix">
+                    <div class="pull-left"><img class="img-responsive img-circle" src="../images/1.jpg" style="height:50px;width:50px;"></div>
+                    <div class="pull-left" style="margin-left:30px;">
+                        <div style="color:orange;">234151251<span style="color:red;">&nbsp LV.1</span></div>
+                        <div class="pull-left add" style="border:2px solid black;padding-left:10px;padding-right:10px;">加关注</div>
+                        <div class="pull-left add" style="margin-left:20px;border:2px solid black;padding-left:10px;padding-right:10px;">发私信</div>
+                    </div>
+                </div>
+                <div style="margin-top:20px;font-size:30px;">西安青海敦煌，8月中旬，缺1人</div>
+                <div style="margin-top:20px;font-size:15px;margin-bottom:20px;">行程如图，现有1女2男，求➕女生1位，如能全程通行最好，或者单青海段拼车也可，费用AA </div>
+                <img class="img-responsive" style="width:100%;height:auto;" src="../images/1.jpg">
+                <img class="img-responsive" style="width:100%;height:auto;margin-top:20px;" src="../images/1.jpg">
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center" style="font-size:20px;padding:10px;background-color:darkgrey;"><span style="color:orange;">1</span>人报名 &nbsp;MM &nbsp;0  &nbsp;GG &nbsp;1 </div>
+                <div>
+                    <a>
+                    <img class="img-circle" style="height:50px;width:50px;margin-top:30px;" src="../images/index3.jpg">
+                    <div>ease嗯嗯</div>
+                    </a>
+                    <div style="margin-top:30px;">关注此结伴的峰峰</div>
+                    <img class="img-circle" style="height:30px;width:30px;margin-top:30px;" src="../images/index3.jpg">
+                </div>
+                <div style="font-size:20px;margin-top:20px;">近期结伴</div>
+                <div>
+                    <div class="thumbnail">
+                        <img src="../images/1.jpg">
+                        <hr>
+                        <div class="caption">
+                            <h3 class="destination">冰岛</h3>
+                            <p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+                            <div class="clearfix">
+                                <img src="../images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+                                <div class="touristname">ease嗯嗯</div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+                                <span  class="pull-right glyphicon glyphicon-chevron-right"></span>
+                                <span  class="pull-right glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="font-size:30px;margin-top:30px;">我要报名</div>
+        <form action="#" method="post">
+            <div class="form-group row">
+                <label for="phone" class="col-sm-1 control-label">联系电话</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control"  id="phone">
+                </div>
+                <div class="col-sm-3">*必填：只对活动发起人和本人公开</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">
+                    <label>性别</label>
+                </div>
+                <div class="radio col-sm-2">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="male" value="">
+                        男
+                    </label>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="female" value="">
+                        女
+                    </label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 control-label">同行人数</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  id="malen">
+                </div>
+                <div class="col-sm-1">男（/人）</div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control"  id="femalen">
+                </div>
+                <div class="col-sm-1">女（/人）</div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-1 control-label">同行名单</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control"  id="list">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-1 control-label">备注</label>
+                <div class="col-sm-6">
+                    <textarea id="beizhu" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group row" style="margin-top:10px;">
+                <div class="col-sm-2 col-sm-offset-1">
+                    <button type="submit" class="btn btn-default">报名</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="post">
+        <div style="font-size:30px;">留言</div>
+        <div class="row">
+            <div class="col-sm-6">
+                <textarea id="liuyan" class="form-control"></textarea>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-default">提交</button>
+            </div>
+        </div>
+        </form>
+        <div class="row">
+            <div class="col-sm-1">
+            <img src="../images/1.jpg" style="height:30px;width:30px;">
+            </div>
+            <div class="col-sm-2">
+                ease嗯嗯
+            </div>
+            <div class="col-sm-2 col-sm-offset-1"><a href="#">回复</a><a href="#">&nbsp;引用</a><a href="#">&nbsp;举报</a></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">二十号敦煌七日游，现我们三人两女一男，有要去的联系我，加入我们一起拼车游。微信:290496647</div>
+        </div>
+    </div>
+</body>
+</html>
