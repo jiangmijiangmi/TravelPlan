@@ -1,0 +1,106 @@
+/**----------------------------------------------
+ >>> Table of Contents:
+ ------------------------------------------------
+ 1.0 u_header
+ 2.0 body
+ 3.0 u_menu
+ 4.0 other
+ 5.0 user_main
+ ------------------------------------------------
+*/
+
+
+/*---1.0 u_header----*/
+
+.header {
+    margin-bottom:50px;
+}
+.u_header {
+    margin: 0 80px 0 80px;
+    /*padding: 0 15px 0 15px;*/
+}
+.info {
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    background-color: #fff;
+}
+.info #avatar {
+    height: 49px;
+    margin-top: 3px;
+}
+.info .name {
+    height: 59px;
+    border: 0;
+}
+.info p {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","SimHei","SimSun",sans-serif;
+    font-size: 20px;
+    height: 20px;
+    margin: 15px 0;
+}
+
+/*---2.0 body------*/
+body {
+    background-color: rgb(250, 250, 250);
+    /*background-color: #ccffff;*/
+    font-family: "Hiragino Sans GB","Microsoft YaHei","SimHei","SimSun",sans-serif;
+    min-width: 768px;
+}
+
+
+/*---3.0 u_menu----*/
+
+.u_menu {
+    background-color: #eee;
+    border: solid 1px #ddd;
+}
+
+.nav-button > a {
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    color: #605951;
+    padding: 12px 16px;
+    border-bottom: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+}
+
+.nav-button > a:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#com {
+    border-right: solid 1px #ddd;
+}
+
+#cog {
+    padding: 10px 12px;
+}
+
+
+/*---4.0 other---*/
+
+.active {
+    background-color: white;
+}
+
+/*---5.0 user_main---*/
+
+.user_main {
+    margin: 0 80px 0 80px;
+}
+
+.user_title {
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.user_title p {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","SimHei","SimSun",sans-serif;
+    font-size: 20px;
+    margin: 30px 0 10px 0;
+}
+
+
+.user_title a {
+    margin: 30px 0 10px 0;
+}
+

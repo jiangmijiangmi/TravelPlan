@@ -1,0 +1,64 @@
+/**----------------------------------------------
+ >>> Table of Contents:
+ ------------------------------------------------
+ 1.0 form
+ 2.0 main
+ 3.0 submit button
+ ------------------------------------------------
+*/
+
+/***
+ ----1.0 form-----
+**/
+
+#username, #gender, #password {
+    margin-left: 73px;
+}
+#username > p {
+    margin: 20px 10px 0 0;
+}
+#password > p {
+    margin: 10px 10px 0 0;
+}
+
+#password span {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.user_data {
+    margin-left: 15px;
+    min-width: 768px;
+}
+
+#gender > .radio {
+    margin: -8px 10px 0 10px;
+}
+
+
+/***
+----2.0 main---
+**/
+
+.user_main {
+    background: white;
+    margin-top: 50px;
+    border: 2px solid #eee;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    min-width: 768px;
+}
+
+.user_nav {
+    min-width: 768px;
+}
+
+
+/***
+----3.0 submit button---
+**/
+
+#unsave_change, #save_change {
+    margin: 50px 50px 30px 0;
+}
+
