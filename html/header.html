@@ -21,13 +21,14 @@
                 <li><a href="#">行程助手</a></li>
                 <li><a href="#">社区</a></li>
             </ul>
-            <ul class="nav-login nav navbar-nav navbar-right">
+            <ul class="nav-user nav navbar-nav navbar-right" v-if="is_login">
+                <li><a href="/TravelPlan/html/user/index.html">个人中心</a></li>
+            </ul>
+            <ul class="nav-login nav navbar-nav navbar-right" v-else>
                 <li><a href="/TravelPlan/html/user/login.html">登陆</a></li>
                 <li><a href="/TravelPlan/html/user/regist.html">注册</a></li>
-            </ul>
-            <ul class="nav-user nav navbar-nav navbar-right">
-                <li><a href="/TravelPlan/html/user/index.html">个人中心</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+
