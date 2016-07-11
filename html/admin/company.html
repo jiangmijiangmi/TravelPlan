@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台管理 - 结伴游管理</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <link href="../css/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="header"></div>
+
+<div class="container">
+    <h1>结伴游管理</h1>
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>城市</th>
+                <th>发起用户</th>
+                <th>点击量</th>
+                <th>内容介绍</th>
+                <th>最小人数</th>
+                <th>最大人数</th>
+                <th>出发时间</th>
+                <th>结束时间</th>
+                <th>发起时间</th>
+                <th>截止时间</th>
+                <th>参与用户</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>北京</td>
+                <td>User 1</td>
+                <td>1000</td>
+                <td><a class="btn btn-default" href="#">查看</a></td>
+                <td>1</td>
+                <td>10</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>
+                    <p>3人</p>
+                    <ul>
+                        <li>User 2</li>
+                        <li>User 3</li>
+                        <li>User 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>北京</td>
+                <td>User 1</td>
+                <td>1000</td>
+                <td><a class="btn btn-default" href="#">查看</a></td>
+                <td>1</td>
+                <td>10</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>
+                    <p>3人</p>
+                    <ul>
+                        <li>User 2</li>
+                        <li>User 3</li>
+                        <li>User 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>北京</td>
+                <td>User 1</td>
+                <td>1000</td>
+                <td><a class="btn btn-default" href="#">查看</a></td>
+                <td>1</td>
+                <td>10</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>2016-3-2</td>
+                <td>
+                    <p>3人</p>
+                    <ul>
+                        <li>User 2</li>
+                        <li>User 3</li>
+                        <li>User 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+<div class="footer"></div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".header").load("header.html", function () {
+            $(".nav-company").addClass("active");
+        });
+        $(".footer").load("footer.html");
+    });
+</script>
+
+<script type="text/javascript">
+    CKEDITOR.replace('editor');
+</script>
+
+</body>
+</html>

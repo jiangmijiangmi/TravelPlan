@@ -158,13 +158,12 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/main.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("../header.html", function () {
-            $(".nav-strategy").addClass("active");
-        });
-        $(".footer").load("../footer.html");
+        init(".nav-strategy", true);
     });
 </script>
 

@@ -1,443 +1,479 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
-    <title>结伴游</title>
-	<script>
-		$(document).ready(function(){
-			$(".plan3").click(function(){
-				$(".plan3").removeClass("active");
-				$(this).addClass("active");
-			});
-		});
-	</script>
-	<style>
-	.plan3.active {
-		border: solid 1px #333;
-	}
-	.plan3.active .glyphicon {
-		display: inline;
-	}
-	.plan3 .glyphicon {
-		display: none;
-	}
-	.destination{
-	font-size:30px;
-	font-weight:bold;
-	}
-	.introduce{
-	font-size:10px;
-	color:#666666;
-	}
-	.touristname{
-	display:inline;
-	font-size:15px;
-	color:red;
-	}
-	.txt{
-	font-size:15px;
-	}
-	.number{
-	font-size:25px;
-	}
-	.tit {
-        position: absolute;
-        left: 50%;
-        margin-left: -180px;
-        width: auto;
-        height: auto;
-        z-index: 10;
-		bottom:20%;
-		text-align:center;
-    }
-	#plan:hover{
-		background-color:rgba(255, 255, 255, 0.7);	
-	}
-	.plan3 {
-		padding: 2px;
-		margin:-5px;
-		margin-top:3px;
-	}
-	.jiebanplan:hover{
-		background-color:rgba(255, 255, 255, 0.7);	
-	}
-	.jiebanplan1:hover{
-		background-color:rgba(255, 255, 255, 0.7);	
-	}
-	.s {
-		opacity: 0;
-		transition: all 0.3s;
-	}
-	.s:hover{
-		opacity:0.7;
-	}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<title>结伴游</title>
+	<style type="text/css">
+		.plan3.active {
+			border: solid 1px #333;
+		}
+
+		.plan3.active .glyphicon {
+			display: inline;
+		}
+
+		.plan3 .glyphicon {
+			display: none;
+		}
+
+		.destination {
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.introduce {
+			font-size: 10px;
+			color: #666666;
+		}
+
+		.touristname {
+			display: inline;
+			font-size: 15px;
+			color: red;
+		}
+
+		.txt {
+			font-size: 15px;
+		}
+
+		.number {
+			font-size: 25px;
+		}
+
+		.tit {
+			position: absolute;
+			left: 50%;
+			margin-left: -180px;
+			width: auto;
+			height: auto;
+			z-index: 10;
+			bottom: 20%;
+			text-align: center;
+		}
+
+		#plan:hover {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+
+		.plan3 {
+			padding: 2px;
+			margin: -5px;
+			margin-top: 3px;
+		}
+
+		.jiebanplan:hover {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+
+		.jiebanplan1:hover {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+
+		.s {
+			opacity: 0;
+			transition: all 0.3s;
+		}
+
+		.s:hover {
+			opacity: 0.7;
+		}
 	</style>
-    
+
 </head>
 <body>
-    <script>
-        $(document).ready(function () {
-            $(".header").load("header.html");
-        });
-         $(document).ready(function () {
-            $(".footer").load("footer.html");
-        });
-    </script>
-    <div style="position:relative;">
-		<img class="img-responsive" src="./images/index1.jpg" style="width:100%;z-index:-9999;">
-		<div class="tit">	
-			<div style="font-size:35px;font-weight:bolder;">我们共有<b style="font-size:45px;">242367</b>个计划</div>
-			<div style="font-size:30px;font-weight:bold;">410417人关注479564人报名</div>
-			<a href="#" style="text-decoration: none;"><div style="border:2px solid white;color:black;font-size:25px;font-weight:bold;" id="plan">发布我的结伴计划</div></a>
+<div class="header"></div>
+<div style="position:relative;">
+	<img class="img-responsive" src="./images/index1.jpg" style="width:100%;z-index:-9999;">
+	<div class="tit">
+		<div style="font-size:35px;font-weight:bolder;">我们共有<b style="font-size:45px;">242367</b>个计划</div>
+		<div style="font-size:30px;font-weight:bold;">410417人关注479564人报名</div>
+		<a href="#" style="text-decoration: none;">
+			<div style="border:2px solid white;color:black;font-size:25px;font-weight:bold;" id="plan">发布我的结伴计划</div>
+		</a>
+	</div>
+</div>
+<div class="container" style="padding-bottom:30px;">
+	<div style="font-size:40px;margin-top:20px;margin-bottom:20px;">结伴热门目的地</div>
+	<div class="row">
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="./images/1.jpg" class="img-responsive center-block">
+			</a>
 		</div>
 	</div>
-	<div class="container" style="padding-bottom:30px;">
-		<div style="font-size:40px;margin-top:20px;margin-bottom:20px;">结伴热门目的地</div>
-		<div class="row">
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-sm-4 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="./images/1.jpg" class="img-responsive center-block">
-				</a>
-			</div>
+</div>
+<div class="container" style="background-color:#F5F5F5;padding-bottom:20px;margin-bottom:30px;">
+	<hr>
+	<div class="row form-group">
+		<div class="col-sm-3">
+			<input class="form-control" placeholder="目的地"/>
+		</div>
+		<div class="col-sm-3">
+			<input class="form-control" placeholder="出发时间"/>
+		</div>
+		<div class="col-sm-1">
+			<div class="plan3 active">热门结伴<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+		</div>
+		<div class="col-sm-1">
+			<div class="plan3">最新发表<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+		</div>
+		<div class="col-sm-1">
+			<div class="plan3">即将出发<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+		</div>
+		<div class="col-sm-3">
+			<button class="btn btn-default" style="padding-bottom:10px;"><a href="#"><span
+					class="glyphicon glyphicon-plus" aria-hidden="true">发布我的结伴计划</a></button>
 		</div>
 	</div>
-	<div class="container" style="background-color:#F5F5F5;padding-bottom:20px;margin-bottom:30px;">
-		<hr>
-			<div class="row form-group">
-				<div class="col-sm-3">
-					<input class="form-control" placeholder="目的地"/>
-				</div>
-				<div class="col-sm-3">
-					<input class="form-control" placeholder="出发时间"/>
-				</div>
-				<div class="col-sm-1">
-					<div class="plan3 active">热门结伴<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
-				</div>
-				<div class="col-sm-1">
-					<div class="plan3">最新发表<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
-				</div>
-				<div class="col-sm-1">
-					<div class="plan3">即将出发<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
-				</div>
-				<div class="col-sm-3">
-					<button class="btn btn-default" style="padding-bottom:10px;"><a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true">发布我的结伴计划</a></button>
+	<hr>
+	<div class="row">
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
+						</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
 				</div>
 			</div>
-		<hr>
-			<div class="row">
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
+		</a>
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
 						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
-					</div>
-				</div>
-				</a>
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
 						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
 					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
 				</div>
-				</a>
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
-						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
-					</div>
-				</div>
-				</a>
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
-						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
-					</div>
-				</div>
-				</a>
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
-						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
-					</div>
-				</div>
-				</a>
-				<a href="#">
-				<div class="col-sm-4 col-xs-6">
-					<div class="thumbnail" style="position:relative">
-						<img src="./images/1.jpg">
-						<hr>
-						<div class="caption">
-							<h3 class="destination">冰岛</h3>
-							<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
-							<div class="clearfix">
-								<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
-								<div class="touristname">ease嗯嗯</div>
-							</div>
-							<div class="clearfix">
-								<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</div>
-						</div>
-						<div class="s" style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
-					</div>
-				</div>
-				</a>
 			</div>
-			<div class="row">
-				<nav class="text-center">
-					<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li>
-						<a href="#" aria-label="Next">
+		</a>
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
+						</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
+				</div>
+			</div>
+		</a>
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
+						</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
+				</div>
+			</div>
+		</a>
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
+						</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
+				</div>
+			</div>
+		</a>
+		<a href="#">
+			<div class="col-sm-4 col-xs-6">
+				<div class="thumbnail" style="position:relative">
+					<img src="./images/1.jpg">
+					<hr>
+					<div class="caption">
+						<h3 class="destination">冰岛</h3>
+						<p class="introduce">ajksdjqoqjfoqjfoiqwjfoiqj</p>
+						<div class="clearfix">
+							<img src="./images/index1.jpg" class="img-circle" style="height:30px;width:30px;">
+							<div class="touristname">ease嗯嗯</div>
+						</div>
+						<div class="clearfix">
+							<div class="pull-left txt">已有<span class="number">100</span>人关注</div>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+							<span style="margin-top:10px;" class="pull-right glyphicon glyphicon-chevron-right"
+								  aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="s"
+						 style="position:absolute;height:100%;width:100%;bottom:0px;left:0px;background:white;text-align:center;"></div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="row">
+		<nav class="text-center">
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li>
+					<a href="#" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
-						</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+					</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
-	<div class="container">
-		<div style="font-size:30px;font-weight:bold;margin-bottom:20px;">结伴热门目的地</div>
-		<div class="row">
-			<div class="col-sm-3 col-xs-3"style="text-align:center;font-size:25px;">
-				境内1000
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">青海湖</a></div>
-				<div><a href="#">云南</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">四川</a></div>
-				<div><a href="#">河南</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">河北</a></div>
-				<div><a href="#">北京</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">天津</a></div>
-				<div><a href="#">上海</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">湖北</a></div>
-				<div><a href="#">湖南</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">山西</a></div>
-				<div><a href="#">山东</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">哈尔滨</a></div>
-				<div><a href="#">吉林</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">辽宁</a></div>
-				<div><a href="#">内蒙古</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">西藏</a></div>
-				<div><a href="#">新疆</a></div>
-			</div>
+</div>
+<div class="container">
+	<div style="font-size:30px;font-weight:bold;margin-bottom:20px;">结伴热门目的地</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-3" style="text-align:center;font-size:25px;">
+			境内1000
 		</div>
-		<div class="row">
-			<div class="col-xs-9 col-xs-offset-3"><hr style="border-bottom:1px dashed #000;"></div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">青海湖</a></div>
+			<div><a href="#">云南</a></div>
 		</div>
-		<div class="row">
-			<div class="col-sm-3 col-xs-3"style="text-align:center;font-size:25px;">
-				境外800
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">美国</a></div>
-				<div><a href="#">英国</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">法国</a></div>
-				<div><a href="#">意大利</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">台湾</a></div>
-				<div><a href="#">俄罗斯</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">天津</a></div>
-				<div><a href="#">上海</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">湖北</a></div>
-				<div><a href="#">湖南</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">山西</a></div>
-				<div><a href="#">山东</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">哈尔滨</a></div>
-				<div><a href="#">吉林</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">辽宁</a></div>
-				<div><a href="#">内蒙古</a></div>
-			</div>
-			<div class="col-sm-1 col-xs-2">
-				<div><a href="#">西藏</a></div>
-				<div><a href="#">新疆</a></div>
-			</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">四川</a></div>
+			<div><a href="#">河南</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">河北</a></div>
+			<div><a href="#">北京</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">天津</a></div>
+			<div><a href="#">上海</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">湖北</a></div>
+			<div><a href="#">湖南</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">山西</a></div>
+			<div><a href="#">山东</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">哈尔滨</a></div>
+			<div><a href="#">吉林</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">辽宁</a></div>
+			<div><a href="#">内蒙古</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">西藏</a></div>
+			<div><a href="#">新疆</a></div>
 		</div>
 	</div>
-	<div class="container" style="margin-top:50px;">
-		<div style="font-size:30px;font-weight:bold;">结伴最近回应</div>
-		<div class="row clearfix">
-			<div class="col-sm-6" style="margin-top:20px;">
-				<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
-				<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
-			</div>
-			<div class="col-sm-6 pull-left"style="margin-top:50px;">
-				<img src="./images/1.jpg" class="img-circle pull-left" style="height:40px;width:40px;">
-				<div class="pull-left col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏...微信多少</div>
-			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-sm-6 col-sm-offset-3">
-				<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
-				<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
-			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-sm-6" style="margin-top:20px;">
-				<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
-				<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
-			</div>
-			<div class="col-sm-6 pull-left"style="margin-top:50px;">
-				<img src="./images/1.jpg" class="img-circle pull-left" style="height:40px;width:40px;">
-				<div class="pull-left col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏...微信多少</div>
-			</div>
+	<div class="row">
+		<div class="col-xs-9 col-xs-offset-3">
+			<hr style="border-bottom:1px dashed #000;">
 		</div>
 	</div>
-	
-	
+	<div class="row">
+		<div class="col-sm-3 col-xs-3" style="text-align:center;font-size:25px;">
+			境外800
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">美国</a></div>
+			<div><a href="#">英国</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">法国</a></div>
+			<div><a href="#">意大利</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">台湾</a></div>
+			<div><a href="#">俄罗斯</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">天津</a></div>
+			<div><a href="#">上海</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">湖北</a></div>
+			<div><a href="#">湖南</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">山西</a></div>
+			<div><a href="#">山东</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">哈尔滨</a></div>
+			<div><a href="#">吉林</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">辽宁</a></div>
+			<div><a href="#">内蒙古</a></div>
+		</div>
+		<div class="col-sm-1 col-xs-2">
+			<div><a href="#">西藏</a></div>
+			<div><a href="#">新疆</a></div>
+		</div>
+	</div>
+</div>
+<div class="container" style="margin-top:50px;">
+	<div style="font-size:30px;font-weight:bold;">结伴最近回应</div>
+	<div class="row clearfix">
+		<div class="col-sm-6" style="margin-top:20px;">
+			<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
+			<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
+		</div>
+		<div class="col-sm-6 pull-left" style="margin-top:50px;">
+			<img src="./images/1.jpg" class="img-circle pull-left" style="height:40px;width:40px;">
+			<div class="pull-left col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏...微信多少</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
+			<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-sm-6" style="margin-top:20px;">
+			<div class="pull-right col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏</div>
+			<img src="./images/1.jpg" class="img-circle pull-right" style="height:40px;width:40px;">
+		</div>
+		<div class="col-sm-6 pull-left" style="margin-top:50px;">
+			<img src="./images/1.jpg" class="img-circle pull-left" style="height:40px;width:40px;">
+			<div class="pull-left col-sm-8" style="font-size:20px;">一木 回应了 国道G318/川藏线（成都——拉萨）+国道G109/青藏...微信多少</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer"></div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/main.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		init(".nav-company");
+		$(".plan3").click(function () {
+			$(".plan3").removeClass("active");
+			$(this).addClass("active");
+		});
+	});
+</script>
+
 </body>
 
 

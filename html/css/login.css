@@ -86,11 +86,16 @@ body {
     width: 49px;
     margin: 0 10px 0 10px;
     display: inline-block;
-    border: 1px solid gray;
+    border: 1px solid #bbb;
     -webkit-border-radius: 49px;
     -moz-border-radius: 49px;
     border-radius:49px;
     background-color: rgba(215, 215, 215, 1);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .no-accout a {
@@ -105,4 +110,20 @@ body {
     height: 100%;
     z-index: -9999;
     position: absolute;
+}
+
+#qq:hover {
+    background: rgb(17, 183, 246);
+}
+
+#wechat:hover {
+    background: rgb(60, 176, 52);
+}
+
+#weibo:hover {
+    background: rgb(233, 14, 16);
+}
+
+#taobao:hover {
+    background: rgb(255, 83, 0);
 }
