@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,17 +41,17 @@
                 <th>手机号</th>
                 <th>注册日期</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>呵呵</td>
-                <td>User1</td>
-                <td>男</td>
-                <td>a@a.com</td>
-                <td>北京</td>
-                <td>1999-8-8</td>
-                <td>码农</td>
-                <td>18888888888</td>
-                <td>2016-6-6</td>
+            <tr v-for="item in users">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nickName}}</td>
+                <td>{{ item.userName }}</td>
+                <td>{{ item.gender }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.country + ' ' + item.province + ' ' + item.city }}</td>
+                <td>{{ item.birthday }}</td>
+                <td>{{ item.career }}</td>
+                <td>{{ item.mobile }}</td>
+                <td>{{ item.date }}</td>
             </tr>
         </table>
     </div>
@@ -63,11 +63,9 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li v-for="i in pageCount" v-bind:class="{'active': i + 1 == currentPage}"><a href="#"
+                                                                                          v-on:click.prevent="onPage(i + 1)">{{
+                i + 1 }}</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -75,25 +73,50 @@
             </li>
         </ul>
     </nav>
-
 </div>
 
 <div class="footer"></div>
 
 <script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-user").addClass("active");
-        });
-        $(".footer").load("footer.html");
-    });
-</script>
+        init('.nav-user');
 
-<script type="text/javascript">
-    CKEDITOR.replace('editor');
+        new Vue({
+            el: "body",
+            data: {
+                pageCount: 3,
+                currentPage: 1,
+                users: [
+                    {
+                        id: 1,
+                        userName: 'User1',
+                        nickName: '小明',
+                        gender: '男',
+                        email: 'aaa@aaa.com',
+                        country: '中国',
+                        province: '北京',
+                        city: '北京',
+                        birthday: '1996-10-31',
+                        career: '码农',
+                        mobile: '18888888888',
+                        date: '2016-5-30'
+                    }
+                ]
+            },
+            methods: {
+                onPage: function (i) {
+                    this.currentPage = i;
+                },
+                onDelete: function (i) {
+
+                }
+            }
+        });
+    });
 </script>
 
 </body>

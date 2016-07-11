@@ -23,7 +23,7 @@ function initCitySelection(city) {
         data: {
             countries: ['中国', '美国'],
             provinces: ['北京', '上海'],
-            cities: ['北京'],
+            cities: ['h','北京'],
             selected: city
         }
     });

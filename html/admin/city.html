@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,60 +29,22 @@
     <div class="table-responsive">
         <table class="table">
             <tr>
+                <th>ID</th>
                 <th>大洲</th>
                 <th>国家</th>
                 <th>省份</th>
                 <th>城市名称</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>亚洲</td>
-                <td>中国</td>
-                <td>北京</td>
-                <td>北京</td>
+            <tr v-for="item in cities">
+                <td>{{ item.id }}</td>
+                <td>{{ item.continent}}</td>
+                <td>{{ item.country }}</td>
+                <td>{{ item.province }}</td>
+                <td>{{ item.city }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>亚洲</td>
-                <td>中国</td>
-                <td>北京</td>
-                <td>北京</td>
-                <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>亚洲</td>
-                <td>中国</td>
-                <td>北京</td>
-                <td>北京</td>
-                <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>亚洲</td>
-                <td>中国</td>
-                <td>北京</td>
-                <td>北京</td>
-                <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>亚洲</td>
-                <td>中国</td>
-                <td>北京</td>
-                <td>北京</td>
-                <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
+                    <a href="#" class="btn btn-primary" v-on:click.prevent="onEdit(item.id)">编辑</a>
+                    <a href="#" class="btn btn-danger" v-on:click.prevent="onDelete(item.id)">删除</a>
                 </td>
             </tr>
         </table>
@@ -95,11 +57,7 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li v-for="i in pageCount" v-bind:class="{'active': i + 1 == currentPage}"><a href="#" v-on:click.prevent="onPage(i + 1)">{{ i + 1 }}</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -109,10 +67,10 @@
     </nav>
 
     <form class="form-inline">
-        <input class="form-control" type="text" placeholder="大洲">
-        <input class="form-control" type="text" placeholder="国家">
-        <input class="form-control" type="text" placeholder="省份">
-        <input class="form-control" type="text" placeholder="城市名称">
+        <input class="form-control" type="text" placeholder="大洲" v-model="continent">
+        <input class="form-control" type="text" placeholder="国家" v-model="country">
+        <input class="form-control" type="text" placeholder="省份" v-model="province">
+        <input class="form-control" type="text" placeholder="城市名称" v-model="city">
         <input type="submit" class="btn btn-primary" value="添加">
     </form>
 </div>
@@ -121,13 +79,57 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-city").addClass("active");
+        init('.nav-city');
+        new Vue({
+            el: 'body',
+            data: {
+                pageCount: 3,
+                currentPage: 1,
+                cities: [
+                    {
+                        id: 1,
+                        continent: '亚洲',
+                        country: '中国',
+                        province: '上海',
+                        city: '上海'
+                    },
+                    {
+                        id: 2,
+                        continent: '亚洲',
+                        country: '中国',
+                        province: '山东',
+                        city: '济南'
+                    },
+                    {
+                        id: 3,
+                        continent: '亚洲',
+                        country: '中国',
+                        province: '北京',
+                        city: '北京'
+                    }
+                ],
+                continent: null,
+                country: null,
+                province: null,
+                city: null
+            },
+            methods: {
+                onPage: function(i) {
+                    this.currentPage = i;
+                },
+                onEdit: function(i) {
+
+                },
+                onDelete: function (i) {
+
+                }
+            }
         });
-        $(".footer").load("footer.html");
     });
 </script>
 

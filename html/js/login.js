@@ -5,7 +5,7 @@ function init(currentClass) {
         new Vue({
             el: 'body',
             data: {
-                baseURL: '/TravelPlan/html/admin'
+                baseURL: '/TravelPlan/html'
             }
         });
     });
@@ -13,6 +13,14 @@ function init(currentClass) {
 }
 
 function initCitySelection(city) {
+    if (city == undefined || city.country == undefined ||
+        city.province == undefined || city.city == undefined) {
+        city = {
+            country: null,
+            province: null,
+            city: null
+        }
+    }
     new Vue({
         el: '.city-selection',
         data: {

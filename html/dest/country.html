@@ -87,7 +87,7 @@
     <div class="title clearfix">
         <h2 class="pull-left"><span class="country-name">中国</span><small>城市列表</small></h2>
         <ul class="nav-continent nav nav-pills pull-right">
-            <li class="province-item" role="presentation" v-for="item in provinces" v-bind:class="{'active': $index == 0}"><a href="#" v-on:click.prevent="onProvinceSelected">{{ item }}</a></li>
+            <li class="province-item" role="presentation" v-for="item in provinces" v-bind:class="{'active': item == provinceName}"><a href="#" v-on:click.prevent="onProvinceSelected">{{ item }}</a></li>
         </ul>
     </div>
     <h3 id="province-name">{{ provinceName }}</h3>
@@ -164,8 +164,6 @@
             },
             methods: {
                 onProvinceSelected: function(event) {
-                    $(".province-item.active").removeClass("active");
-                    $(event.target).parent("li").addClass("active");
                     this.provinceName = $(event.target).text();
                 }
             }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,76 +44,23 @@
                 <th>参与用户</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>User 1</td>
-                <td>1000</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1</td>
-                <td>10</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
+            <tr v-for="item in company">
+                <td>{{ item.id }}</td>
+                <td>{{ item.country + ' ' + item.province + ' ' + item.city }}</td>
+                <td>{{ item.user }}</td>
+                <td>{{ item.clickCount }}</td>
+                <td><a class="btn btn-default" v-bind:href="item.url">查看</a></td>
+                <td>{{ item.minCount }}</td>
+                <td>{{ item.maxCount }}</td>
+                <td>{{ item.beginDate }}</td>
+                <td>{{ item.endDate }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{ item.deadline }}</td>
+                <td><button class="btn btn-default" v-on:click="onViewParticipants(item.participants.toString())">
+                    共{{ item.participants.length }}人
+                </button></td>
                 <td>
-                    <p>3人</p>
-                    <ul>
-                        <li>User 2</li>
-                        <li>User 3</li>
-                        <li>User 4</li>
-                    </ul>
-                </td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>User 1</td>
-                <td>1000</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1</td>
-                <td>10</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>
-                    <p>3人</p>
-                    <ul>
-                        <li>User 2</li>
-                        <li>User 3</li>
-                        <li>User 4</li>
-                    </ul>
-                </td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>User 1</td>
-                <td>1000</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1</td>
-                <td>10</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>
-                    <p>3人</p>
-                    <ul>
-                        <li>User 2</li>
-                        <li>User 3</li>
-                        <li>User 4</li>
-                    </ul>
-                </td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
+                    <a href="#" class="btn btn-danger" v-on:click.prevent="onDelete(item.id)">删除</a>
                 </td>
             </tr>
         </table>
@@ -126,11 +73,7 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li v-for="i in pageCount" v-bind:class="{'active': i + 1 == currentPage}"><a href="#" v-on:click.prevent="onPage(i + 1)">{{ i + 1 }}</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -145,18 +88,52 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-company").addClass("active");
-        });
-        $(".footer").load("footer.html");
-    });
-</script>
+        init('.nav-company');
 
-<script type="text/javascript">
-    CKEDITOR.replace('editor');
+        new Vue({
+            el: "body",
+            data: {
+                pageCount: 3,
+                currentPage: 1,
+                company: [
+                    {
+                        id: 1,
+                        country: '中国',
+                        province: '山东',
+                        city: '济南',
+                        user: 'User1',
+                        clickCount: 100,
+                        url: '#',
+                        minCount: 3,
+                        maxCount: 100,
+                        beginDate: '2016-3-3',
+                        endDate: '2016-9-9',
+                        date: '2016-2-2',
+                        deadline: '2016-3-1',
+                        participants: [
+                                'User2', 'Uesr3', 'User4'
+                        ]
+                    }
+                ]
+            },
+            methods: {
+                onViewParticipants: function(p) {
+                    alert('有以下用户参与：\n' + p.split(',').join('\n'));
+                },
+                onPage: function(i) {
+                    this.currentPage = i;
+                },
+                onDelete: function (i) {
+
+                }
+            }
+        });
+    });
 </script>
 
 </body>

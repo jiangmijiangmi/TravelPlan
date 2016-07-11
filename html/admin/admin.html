@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,11 +33,11 @@
                 <th>用户名</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>Admin1</td>
+            <tr v-for="item in admins">
+                <td>{{ item.userName }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">编辑</a>
-                    <a href="#" class="btn btn-danger">删除</a>
+                    <a href="#" class="btn btn-primary" v-on:click.prevent="onEdit(item.userName)">编辑</a>
+                    <a href="#" class="btn btn-danger" v-on:click.prevent="onDelete(item.userName)">删除</a>
                 </td>
             </tr>
         </table>
@@ -50,11 +50,9 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li v-for="i in pageCount" v-bind:class="{'active': i + 1 == currentPage}"><a href="#"
+                                                                                          v-on:click.prevent="onPage(i + 1)">{{
+                i + 1 }}</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -64,8 +62,8 @@
     </nav>
 
     <form class="form-inline">
-        <input class="form-control" type="text" placeholder="用户名">
-        <input class="form-control" type="password" placeholder="密码">
+        <input class="form-control" type="text" placeholder="用户名" v-model="userName">
+        <input class="form-control" type="password" placeholder="密码" v-model="password">
         <input type="submit" class="btn btn-primary" value="添加">
     </form>
 
@@ -75,18 +73,40 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-admin").addClass("active");
-        });
-        $(".footer").load("footer.html");
-    });
-</script>
+        init('.nav-admin');
 
-<script type="text/javascript">
-    CKEDITOR.replace('editor');
+        new Vue({
+            el: "body",
+            data: {
+                pageCount: 3,
+                currentPage: 1,
+                admins: [
+                    {
+                        id: 1,
+                        userName: 'User1',
+                    }
+                ],
+                userName: null,
+                password: null
+            },
+            methods: {
+                onPage: function (i) {
+                    this.currentPage = i;
+                },
+                onDelete: function (userName) {
+
+                },
+                onEdit: function (userName) {
+
+                }
+            }
+        });
+    });
 </script>
 
 </body>

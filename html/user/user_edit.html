@@ -44,15 +44,13 @@
                     <p class="pull-left"> 性 别: </p>
                     <div class="radio pull-left">
                         <label>
-                            <input type="radio" name="gender" id="male" value="male"
-                                   v-bind:checked="user.gender=='男'">
+                            <input type="radio" name="gender" id="male" value="男" v-model="user.gender">
                             男
                         </label>
                     </div>
                     <div class="radio pull-left">
                         <label>
-                            <input type="radio" name="gender" id="famale" value="famale"
-                                   v-bind:checked="user.gender=='女'">
+                            <input type="radio" name="gender" id="famale" value="女" v-model="user.gender">
                             女
                         </label>
                     </div>
@@ -60,37 +58,37 @@
                 <div class="form-group">
                     <label for="birth" class="control-label col-sm-2"> 出生日期: </label>
                     <div class="col-sm-6">
-                        <input type="date" class="form-control" id="birth" v-bind:value="user.birthday">
+                        <input type="date" class="form-control" id="birth" v-model="user.birthday">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="job" class="control-label col-sm-2"> 主要职业: </label>
                     <div class="col-sm-6">
-                        <input type="text" id="job" class="form-control" v-bind:value="user.career">
+                        <input type="text" id="job" class="form-control" v-model="user.career">
                     </div>
                 </div>
                 <div class="city-selection">
                     <div class="form-group">
                         <label for="inputCountry" class="control-label col-sm-2">国家</label>
                         <div class="col-sm-6">
-                            <select class="form-control" id="inputCountry">
-                                <option v-for="item in countries" v-bind:selected="item == selected.country">{{ item }}</option>
+                            <select class="form-control" id="inputCountry" v-model="selected.country">
+                                <option v-for="item in countries">{{ item }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputProvince" class="control-label col-sm-2">省份</label>
                         <div class="col-sm-6">
-                            <select class="form-control col-sm-6" id="inputProvince">
-                                <option v-for="item in provinces" v-bind:selected="item == selected.province">{{ item }}</option>
+                            <select class="form-control col-sm-6" id="inputProvince" v-model="selected.province">
+                                <option v-for="item in provinces">{{ item }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputCity" class="control-label col-sm-2">城市</label>
                         <div class="col-sm-6">
-                            <select class="form-control col-sm-6" id="inputCity">
-                                <option v-for="item in cities" v-bind:selected="item == selected.city">{{ item }}</option>
+                            <select class="form-control col-sm-6" id="inputCity" v-model="selected.city">
+                                <option v-for="item in cities" >{{ item }}</option>
                             </select>
                         </div>
                     </div>
@@ -98,13 +96,13 @@
                 <div class="form-group">
                     <label for="email" class="control-label col-sm-2"> 邮件地址: </label>
                     <div class="col-sm-6">
-                        <input type="email" class="form-control" id="email" v-bind:value="user.email">
+                        <input type="email" class="form-control" id="email" v-model="user.email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="mobile" class="control-label col-sm-2"> 手机号: </label>
                     <div class="col-sm-6">
-                        <input type="tel" class="form-control" id="mobile" v-bind:value="user.mobile">
+                        <input type="tel" class="form-control" id="mobile" v-model="user.mobile">
                     </div>
                 </div>
                 <div class="ok clearfix">

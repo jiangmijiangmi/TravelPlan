@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,56 +40,17 @@
                 <th>发表时间</th>
                 <th>操作</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>带你转京城</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1000</td>
-                <td>User 1</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
+            <tr v-for="item in strategies">
+                <td>{{ item.id }}</td>
+                <td>{{ item.country + ' ' + item.province + ' ' + item.city }}</td>
+                <td>{{ item.title }}</td>
+                <td><a class="btn btn-default" v-bind:href="item.url">查看</a></td>
+                <td>{{ item.clickCount }}</td>
+                <td>{{ item.user }}</td>
+                <td>{{ item.updateDate }}</td>
+                <td>{{ item.date }}</td>
                 <td>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>带你转京城</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1000</td>
-                <td>User 1</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>带你转京城</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1000</td>
-                <td>User 1</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>北京</td>
-                <td>带你转京城</td>
-                <td><a class="btn btn-default" href="#">查看</a></td>
-                <td>1000</td>
-                <td>User 1</td>
-                <td>2016-3-2</td>
-                <td>2016-3-2</td>
-                <td>
-                    <a href="#" class="btn btn-danger">删除</a>
+                    <a href="#" class="btn btn-danger" v-on:click.prevent="onDelete(item.id)">删除</a>
                 </td>
             </tr>
         </table>
@@ -102,11 +63,7 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li v-for="i in pageCount" v-bind:class="{'active': i + 1 == currentPage}"><a href="#" v-on:click.prevent="onPage(i + 1)">{{ i + 1 }}</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -121,18 +78,67 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-strategy").addClass("active");
-        });
-        $(".footer").load("footer.html");
-    });
-</script>
+        init('.nav-strategy');
 
-<script type="text/javascript">
-    CKEDITOR.replace('editor');
+        new Vue({
+            el: "body",
+            data: {
+                pageCount: 3,
+                currentPage: 1,
+                strategies: [
+                    {
+                        id: 1,
+                        title: '北漂记录',
+                        country: '中国',
+                        province: '北京',
+                        city: '北京',
+                        clickCount: 100,
+                        user: 'User1',
+                        updateDate: '2016-6-6',
+                        date: '2016-3-3',
+                        url: '#'
+                    },
+                    {
+                        id: 2,
+                        title: '北漂记录',
+                        country: '中国',
+                        province: '北京',
+                        city: '北京',
+                        clickCount: 100,
+                        user: 'User1',
+                        updateDate: '2016-6-6',
+                        date: '2016-3-3',
+                        url: '#'
+                    },
+                    {
+                        id: 3,
+                        title: '北漂记录',
+                        country: '中国',
+                        province: '北京',
+                        city: '北京',
+                        clickCount: 100,
+                        user: 'User1',
+                        updateDate: '2016-6-6',
+                        date: '2016-3-3',
+                        url: '#'
+                    }
+                ]
+            },
+            methods: {
+                onPage: function(i) {
+                    this.currentPage = i;
+                },
+                onDelete: function (i) {
+
+                }
+            }
+        });
+    });
 </script>
 
 </body>
