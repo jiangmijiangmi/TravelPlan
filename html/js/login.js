@@ -1,20 +1,15 @@
-function init(currentClass, second, login) {
-    var prefix = '';
-    if (second) {
-        prefix = '../'
-    }
-    $(".header").load(prefix + "header.html", function () {
+function init(currentClass) {
+    $(".header").load("header.html", function () {
         $(currentClass).addClass("active");
 
         new Vue({
             el: 'body',
             data: {
-                is_login: login,
-                baseURL: '/TravelPlan/html'
+                baseURL: '/TravelPlan/html/admin'
             }
         });
     });
-    $(".footer").load(prefix + "footer.html");
+    $(".footer").load("footer.html");
 }
 
 function initCitySelection(city) {

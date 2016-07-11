@@ -26,27 +26,27 @@
 <div class="container">
     <div class="jumbotron">
         <h1>未名游后台管理</h1>
-        <p>欢迎 xhx 管理员，请认真负责进行管理操作！</p>
+        <p>欢迎 {{adminName}} 管理员，请认真负责进行管理操作！</p>
         <table class="table">
             <tr>
                 <td>用户量</td>
-                <td>100,000</td>
+                <td>{{ userCount}}</td>
             </tr>
             <tr>
                 <td>目的地总量</td>
-                <td>30,000</td>
+                <td>{{ destCount }}</td>
             </tr>
             <tr>
                 <td>攻略总量</td>
-                <td>100,000</td>
+                <td>{{ strategyCount }}</td>
             </tr>
             <tr>
                 <td>结伴游总量</td>
-                <td>10,000</td>
+                <td>{{ companyCount }}</td>
             </tr>
             <tr>
                 <td>管理员数量</td>
-                <td>10</td>
+                <td>{{ adminCount }}</td>
             </tr>
         </table>
     </div>
@@ -56,13 +56,23 @@
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/login.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".header").load("header.html", function () {
-            $(".nav-home").addClass("active");
+        init('.nav-home');
+        new Vue({
+            el: 'body',
+            data: {
+                adminName: 'xhx',
+                userCount: 10000,
+                destCount: 10000,
+                strategyCount: 10000,
+                companyCount: 10000,
+                adminCount: 1000
+            }
         });
-        $(".footer").load("footer.html");
     });
 </script>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,50 +87,29 @@
     <div class="title clearfix">
         <h2 class="pull-left">国家列表</h2>
         <ul class="nav-continent nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">亚洲</a></li>
-            <li role="presentation"><a href="#">欧洲</a></li>
-            <li role="presentation"><a href="#">美洲</a></li>
-            <li role="presentation"><a href="#">非洲</a></li>
-            <li role="presentation"><a href="#">大洋洲</a></li>
-            <li role="presentation"><a href="#">南极洲</a></li>
+            <li class="continent-item" role="presentation" v-for="item in continents" v-bind:class="{'active': $index == 0}"><a href="#" v-on:click.prevent="onContinentSelected">{{ item }}</a></li>
         </ul>
     </div>
-    <h3 id="continent-name">亚洲</h3>
+    <h3 id="continent-name">{{ continentName }}</h3>
     <div class="row country-wrap text-center">
         <div class="col-sm-3 col-xs-6">
             <ul class="country-list">
-                <li><a href="country.html">中国</a></li>
-                <li><a href="country.html">日本</a></li>
-                <li><a href="country.html">朝鲜</a></li>
-                <li><a href="country.html">韩国</a></li>
-                <li><a href="country.html">泰国</a></li>
+                <li v-for="item in country1"><a v-bind:href="item.url">{{ item.name }}</a></li>
             </ul>
         </div>
         <div class="col-sm-3 col-xs-6">
             <ul class="country-list">
-                <li><a href="country.html">马来西亚</a></li>
-                <li><a href="country.html">越南</a></li>
-                <li><a href="country.html">老挝</a></li>
-                <li><a href="country.html">缅甸</a></li>
-                <li><a href="country.html">柬埔寨</a></li>
+                <li v-for="item in country2"><a v-bind:href="item.url">{{ item.name }}</a></li>
             </ul>
         </div>
         <div class="col-sm-3 col-xs-6">
             <ul class="country-list">
-                <li><a href="country.html">印度尼西亚</a></li>
-                <li><a href="country.html">新加坡</a></li>
-                <li><a href="country.html">菲律宾</a></li>
-                <li><a href="country.html">台湾</a></li>
-                <li><a href="country.html">马尔代夫</a></li>
+                <li v-for="item in country3"><a v-bind:href="item.url">{{ item.name }}</a></li>
             </ul>
         </div>
         <div class="col-sm-3 col-xs-6">
             <ul class="country-list">
-                <li><a href="#">印度</a></li>
-                <li><a href="#">尼泊尔</a></li>
-                <li><a href="#">不丹</a></li>
-                <li><a href="#">巴基斯坦</a></li>
-                <li><a href="#">阿联酋</a></li>
+                <li v-for="item in country4"><a v-bind:href="item.url">{{ item.name }}</a></li>
             </ul>
         </div>
     </div>
@@ -164,7 +143,91 @@
                     url: '../images/bk3.jpg',
                     desp: '美'
                 }
-            ]
+            ],
+            continents: [
+                    '亚洲', '非洲', '北美洲', '南美洲', '大洋洲'
+            ],
+            country1: [
+                {
+                    url: 'country.html',
+                    name: '中国'
+                },
+                {
+                    url: '#',
+                    name: '韩国'
+                },
+                {
+                    url: '#',
+                    name: '朝鲜'
+                },
+                {
+                    url: '#',
+                    name: '蒙古'
+                }
+            ],
+            country2: [
+                {
+                    url: 'country.html',
+                    name: '中国'
+                },
+                {
+                    url: '#',
+                    name: '韩国'
+                },
+                {
+                    url: '#',
+                    name: '朝鲜'
+                },
+                {
+                    url: '#',
+                    name: '蒙古'
+                }
+            ],
+            country3: [
+                {
+                    url: 'country.html',
+                    name: '中国'
+                },
+                {
+                    url: '#',
+                    name: '韩国'
+                },
+                {
+                    url: '#',
+                    name: '朝鲜'
+                },
+                {
+                    url: '#',
+                    name: '蒙古'
+                }
+            ],
+            country4: [
+                {
+                    url: 'country.html',
+                    name: '中国'
+                },
+                {
+                    url: '#',
+                    name: '韩国'
+                },
+                {
+                    url: '#',
+                    name: '朝鲜'
+                },
+                {
+                    url: '#',
+                    name: '蒙古'
+                }
+            ],
+            continentName: '亚洲'
+
+        },
+        methods: {
+            onContinentSelected: function(event) {
+                $(".continent-item.active").removeClass("active");
+                $(event.target).parent("li").addClass("active");
+                this.continentName = $(event.target).text();
+            }
         }
     });
 </script>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -17,14 +17,14 @@
                 <li class="nav-home"><a v-bind:href="baseURL + '/index.html'">主页</a></li>
                 <li class="nav-dest"><a v-bind:href="baseURL + '/dest/index.html'">目的地</a></li>
                 <li class="nav-strategy"><a v-bind:href="baseURL + '/strategy/index.html'">攻略</a></li>
-                <li class="nav-company"><a v-bind:href="baseURL + '/结伴游.html'">结伴游</a></li>
+                <li class="nav-company"><a v-bind:href="baseURL + '/company/index.html'">结伴游</a></li>
                 <!--
                 <li><a href="#">行程助手</a></li>
                 <li><a href="#">社区</a></li>
                 -->
             </ul>
             <ul class="nav-user nav navbar-nav navbar-right" v-if="is_login">
-                <li><a v-bind:href="baseURL + '/user/index.html'">个人中心</a></li>
+                <li class="nav-profile"><a v-bind:href="baseURL + '/user/index.html'">个人中心</a></li>
             </ul>
             <ul class="nav-login nav navbar-nav navbar-right" v-else>
                 <li><a v-bind:href="baseURL + '/user/login.html'">登陆</a></li>

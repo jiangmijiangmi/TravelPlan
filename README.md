@@ -61,7 +61,7 @@
 
 city (**id**, **country**, province, **name**)
 
-user (**id**, **nickname**, **password**, name, gender, **email**, idcard, city\_id, birthday, career, mobile, is\_vip, **created_at**)
+user (**id**, **nickname**, **password**, name, gender, **email**, city\_id, birthday, career, mobile, is\_vip, **created_at**)
 
 destination (**id**, **city_id**, **title**, **content**, **click_count**, **created_at**)
 

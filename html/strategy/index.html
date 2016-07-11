@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>攻略</title>
+    <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -33,22 +34,10 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="../images/bk4.jpg" alt="bk1">
+        <div class="item" v-bind:class="{'active': $index == 0}"  v-for="item in carousel">
+            <img v-bind:src="item.url" v-bind:alt="'img' + $index">
             <div class="carousel-caption">
-                <h3>吃</h3>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/bk5.jpg" alt="bk2">
-            <div class="carousel-caption">
-                <h3>喝</h3>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../images/bj6xc.jpg" alt="bk3">
-            <div class="carousel-caption">
-                <h3>玩</h3>
+                <h3>{{ item.desp }}</h3>
             </div>
         </div>
     </div>
@@ -103,25 +92,10 @@
                 </div>
 
                 <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <span class="badge">2016-1-3</span>
-                        <h4 class="list-group-item-heading">小明的朝鲜终生游攻略</h4>
-                        <p class="list-group-item-text">我已阵亡</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">2016-1-3</span>
-                        <h4 class="list-group-item-heading">小明的朝鲜终生游攻略</h4>
-                        <p class="list-group-item-text">我已阵亡</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">2016-1-3</span>
-                        <h4 class="list-group-item-heading">小明的朝鲜终生游攻略</h4>
-                        <p class="list-group-item-text">我已阵亡</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">2016-1-3</span>
-                        <h4 class="list-group-item-heading">小明的朝鲜终生游攻略</h4>
-                        <p class="list-group-item-text">我已阵亡</p>
+                    <a v-bind:href="item.url" class="list-group-item" v-for="item in strategies">
+                        <span class="badge">{{ item.user + " 发表于 " + item.date }}</span>
+                        <h4 class="list-group-item-heading">{{ item.title }}</h4>
+                        <p class="list-group-item-text">{{ item.desp }}</p>
                     </a>
                 </div>
             </div>
@@ -130,22 +104,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">筛选</div>
                 <div class="panel-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="search" placeholder="搜索">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-default" aria-label="search">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            </button>
-                        </span>
-                    </div>
+                    <form>
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="search" placeholder="搜索">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default" aria-label="search">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
                     <hr>
                     <span>排序规则 </span>
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-primary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked>按时间
+                        <label class="btn btn-primary active" v-on:click="onSortByTime">
+                            <input type="radio" name="sort" id="sortByTime" autocomplete="off" checked>按时间
                         </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="option2" autocomplete="off">按热度
+                        <label class="btn btn-primary" v-on:click="onSortByHot">
+                            <input type="radio" name="sort" id="sortByHot" autocomplete="off">按热度
                         </label>
                     </div>
                 </div>
@@ -164,6 +140,64 @@
 <script type="text/javascript">
     $(document).ready(function () {
         init(".nav-strategy", true);
+
+        new Vue({
+            el: 'body',
+            data: {
+                carousel: [
+                    {
+                        url: '../images/bk4.jpg',
+                        desp: '美'
+                    },
+                    {
+                        url: '../images/bk5.jpg',
+                        desp: '美'
+                    },
+                    {
+                        url: '../images/bk6.jpg',
+                        desp: '美'
+                    }
+                ],
+                strategies: [
+                    {
+                        url: '#',
+                        title:　'小明的朝鲜终生游攻略',
+                        desp: '我已阵亡',
+                        user: '小明',
+                        date: '2016-13-32'
+                    },
+                    {
+                        url: '#',
+                        title:　'小明的朝鲜终生游攻略',
+                        desp: '我已阵亡',
+                        user: '小明',
+                        date: '2016-13-32'
+                    },
+                    {
+                        url: '#',
+                        title:　'小明的朝鲜终生游攻略',
+                        desp: '我已阵亡',
+                        user: '小明',
+                        date: '2016-13-32'
+                    },
+                    {
+                        url: '#',
+                        title:　'小明的朝鲜终生游攻略',
+                        desp: '我已阵亡',
+                        user: '小明',
+                        date: '2016-13-32'
+                    }
+                ]
+            },
+            methods: {
+                onSortByTime: function(event) {
+                    console.log('sortByTime')
+                },
+                onSortByHot: function(event) {
+                    console.log('sortByHot')
+                }
+            }
+        });
     });
 </script>
 

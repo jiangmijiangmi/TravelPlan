@@ -28,33 +28,41 @@
         <div class="user_main">
             <div class="user_title clearfix">
                 <p class="pull-left">个人资料</p>
-                <a href="user_change.html" class="btn btn-success pull-right">编辑资料</a>
+                <a href="user_edit.html" class="btn btn-success pull-right">编辑资料</a>
             </div>
             <div class="user_data">
                 <ul>
                     <li class="clearfix">
-                        <div class="pull-left">用户名称:</div>
-                        <div class="pull-left"> lvxiaoxin </div>
+                        <div class="pull-left">用户名:</div>
+                        <div class="pull-left">{{ user.name }}</div>
                     </li>
                     <li class="clearfix">
                         <div class="pull-left">性别:</div>
-                        <div class="pull-left"> 男 </div>
+                        <div class="pull-left">{{ user.gender }}</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">手机号:</div>
+                        <div class="pull-left">{{ user.mobile }}</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="pull-left">Email:</div>
+                        <div class="pull-left">{{ user.email }}</div>
                     </li>
                     <li class="clearfix">
                         <div class="pull-left">生日:</div>
-                        <div class="pull-left"> 1996 年 04 月 05日</div>
+                        <div class="pull-left">{{ user.birthday }}</div>
                     </li>
                     <li class="clearfix">
-                        <div class="pull-left">住址:</div>
-                        <div class="pull-left">北京市海淀区新街口外大街19号北京师范大学</div>
+                        <div class="pull-left">居住城市:</div>
+                        <div class="pull-left">{{ user.city }}</div>
                     </li>
                     <li class="clearfix">
                         <div class="pull-left">职业:</div>
-                        <div class="pull-left">学生</div>
+                        <div class="pull-left">{{ user.career }}</div>
                     </li>
                     <li class="clearfix">
                         <div class="pull-left">加入时间:</div>
-                        <div class="pull-left">2016年 07月 06日</div>
+                        <div class="pull-left">{{ user.date }}</div>
                     </li>
                 </ul>
             </div>
@@ -70,13 +78,36 @@
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/user_index.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/main.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".header").load("../header.html");
         $(".user_nav").load("./user_nav.html", function() {
+
             $("#index").addClass("active");
+
+            init(".nav-profile", true, true);
+
+            new Vue({
+                el: 'body',
+                data: {
+                    baseURL: '/TravelPlan/html',
+                    user: {
+                        avatar: '../images/avatar.png',
+                        name: 'User1',
+                        gender: '男',
+                        mobile: '18888888888',
+                        email: 'a@a.com',
+                        birthday: '1999-9-9',
+                        city: '北京',
+                        career: '上帝',
+                        date: '2016-6-6'
+                    }
+                }
+            });
         });
-        $(".footer").load("../footer.html");
+
     });
 </script>
 </body>

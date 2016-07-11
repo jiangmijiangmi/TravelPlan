@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>结伴游</title>
+    <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="../css/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="header"></div>
+
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home" data-slide-to="1"></li>
+        <li data-target="#carousel-home" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item" v-bind:class="{'active': $index == 0}" v-for="item in carousel">
+            <img v-bind:src="item.url" v-bind:alt="'img' + $index">
+            <div class="carousel-caption">
+                <h3>{{ item.desp }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+    <!-- Search -->
+    <div class="search hidden-xs">
+        <img class="logo center-block img-responsive" src="../images/logo.png">
+        <form>
+            <div class="input-group">
+                <input class="form-control input-lg" type="text" name="search" placeholder="搜索结伴游">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default btn-lg" aria-label="search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="search visible-xs-block">
+    <form>
+        <div class="input-group">
+            <input class="form-control input-lg" type="text" name="search" placeholder="搜索结伴游">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary btn-lg" aria-label="search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+        </div>
+    </form>
+</div>
+
+<div class="strategy container">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">结伴游列表</div>
+                <div class="panel-body">
+                    <p>以下均为用户个人发起的结伴游, 本公司作为平台不承担一切法律责任。</p>
+                </div>
+
+                <div class="list-group">
+                    <div id="hot-company" class="row">
+                        <div class="col-sm-6" v-for="item in company">
+                            <div class="thumbnail">
+                                <img v-bind:src="item.image" v-bind:alt="'company' + $index">
+                                <div class="caption">
+                                    <h3>{{ item.title }}<span
+                                            class="badge">报名人数：{{ item.count + '/' + item.maxCount }}</span></h3>
+                                    <p>
+                                        <span class="label label-primary">出发时间：{{ item.beginDate }}</span>
+                                        <span class="label label-danger">返回时间：{{ item.endDate }}</span>
+                                    </p>
+                                    <p>
+                                        <span class="label label-success">发起时间：{{ item.date }}</span>
+                                        <span class="label label-warning">报名截止时间：{{ item.deadline }}</span>
+                                    </p>
+                                    <p class="alert alert-info">
+                                        {{ item.desp }}
+                                    </p>
+                                    <p>
+                                        最少人数：{{ item.minCount}}
+                                    </p>
+                                    <p>
+                                        <a v-bind:href="item.url" class="btn btn-success btn-block" role="button"
+                                           v-if="!item.isExpired && item.count < item.maxCount">报名</a>
+                                        <a v-bind:href="item.url" class="btn btn-default btn-block" role="button"
+                                           disabled v-else>报名</a>
+                                    </p>
+                                    <span class="badge">发起人：{{ item.user }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">筛选</div>
+                <div class="panel-body">
+                    <form>
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="search" placeholder="搜索">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default" aria-label="search">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="form-group">
+                        <span>排序规则 </span>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary active" v-on:click="onSortByTime">
+                                <input type="radio" name="sort" id="sortByTime" autocomplete="off" checked>按时间
+                            </label>
+                            <label class="btn btn-primary" v-on:click="onSortByHot">
+                                <input type="radio" name="sort" id="sortByHot" autocomplete="off">按热度
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span>筛选规则 </span>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary" v-on:click="onFilterByOpen">
+                                <input type="checkbox" name="filter[]" id="open" autocomplete="off" checked>可报名
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/main.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        init(".nav-company", true);
+
+        new Vue({
+            el: 'body',
+            data: {
+                carousel: [
+                    {
+                        url: '../images/index1.jpg',
+                        desp: '美'
+                    },
+                    {
+                        url: '../images/index2.jpg',
+                        desp: '美'
+                    },
+                    {
+                        url: '../images/index3.jpg',
+                        desp: '美'
+                    }
+                ],
+                company: [
+                    {
+                        image: '../images/xfj.jpg',
+                        url: '#',
+                        title: '信访局一日游',
+                        desp: '我准备好了!',
+                        count: 100,
+                        minCount: 5,
+                        maxCount: 120,
+                        user: '某不怕死',
+                        beginDate: '2016-10-2',
+                        endDate: '2016-10-31',
+                        date: '2016-7-8',
+                        deadline: '2016-7-9',
+                        isExpired: true
+                    },
+                    {
+                        image: '../images/xfj.jpg',
+                        url: '#',
+                        title: '信访局一日游',
+                        desp: '我准备好了!',
+                        count: 100,
+                        minCount: 5,
+                        maxCount: 120,
+                        user: '某不怕死',
+                        beginDate: '2016-10-2',
+                        endDate: '2016-10-31',
+                        date: '2016-7-8',
+                        deadline: '2016-12-31',
+                        isExpired: false
+                    }
+                ]
+            },
+            methods: {
+                onSortByTime: function (event) {
+                    console.log('sortByTime')
+                },
+                onSortByHot: function (event) {
+                    console.log('sortByHot')
+                },
+                onFilterByOpen: function (event) {
+                    if (!$(event.target).hasClass('active')) {
+                        console.log('filterByOpen')
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
