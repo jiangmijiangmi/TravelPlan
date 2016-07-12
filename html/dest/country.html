@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +34,7 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item" v-bind:class="{'active': $index == 0}"  v-for="item in carousel">
+        <div class="item" v-bind:class="{'active': $index == 0}" v-for="item in carousel">
             <img v-bind:src="item.url" v-bind:alt="'img' + $index">
             <div class="carousel-caption">
                 <h3>{{ item.desp }}</h3>
@@ -84,10 +84,20 @@
 </div>
 
 <div class="dest container">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">目的地</a></li>
+        <li class="active">{{ countryName }}</li>
+    </ol>
+
     <div class="title clearfix">
-        <h2 class="pull-left"><span class="country-name">中国</span><small>城市列表</small></h2>
+        <h2 class="pull-left"><span class="country-name">{{ countryName }}</span>
+            <small>城市列表</small>
+        </h2>
         <ul class="nav-continent nav nav-pills pull-right">
-            <li class="province-item" role="presentation" v-for="item in provinces" v-bind:class="{'active': item == provinceName}"><a href="#" v-on:click.prevent="onProvinceSelected">{{ item }}</a></li>
+            <li class="province-item" role="presentation" v-for="item in provinces"
+                v-bind:class="{'active': item == provinceName}"><a href="#" v-on:click.prevent="onProvinceSelected">{{
+                item }}</a></li>
         </ul>
     </div>
     <h3 id="province-name">{{ provinceName }}</h3>
@@ -152,18 +162,15 @@
                         name: '北京'
                     }
                 ],
-                city2: [
-                ],
-                city3: [
-                ],
-                city4: [
-                ],
+                city2: [],
+                city3: [],
+                city4: [],
                 countryName: '中国',
                 provinceName: '北京'
 
             },
             methods: {
-                onProvinceSelected: function(event) {
+                onProvinceSelected: function (event) {
                     this.provinceName = $(event.target).text();
                 }
             }

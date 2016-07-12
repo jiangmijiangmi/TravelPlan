@@ -83,6 +83,13 @@
 </div>
 
 <div class="main container">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">目的地</a></li>
+        <li><a href="country.html">{{ countryName }}</a></li>
+        <li class="active">{{ cityName }}</li>
+    </ol>
+
     <article>
         <h1 class="text-center">{{ cityName }}</h1>
         <p class="intro">{{{ intro }}}</p>
@@ -117,6 +124,8 @@
                         desp: '美'
                     }
                 ],
+                countryName: '中国',
+                provinceName: '北京',
                 cityName: '北京',
                 intro: '<p class="text-center">燕京、大都、北平、顺天府，虽然你没有经历过这些年代，但你知道这就是北京。<br>' +
                 '大碗茶，豆汁儿，冰糖葫芦，驴打滚儿，虽然你未必尝过这些小吃，但你知道这就是北京<br>' +
