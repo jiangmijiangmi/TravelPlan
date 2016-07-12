@@ -64,8 +64,10 @@ city (**id**, **country**, province, **name**)
 user (**id**, **nickname**, **password**, name, gender, **email**, city\_id, birthday, career, mobile, is\_vip, **created_at**)
 
 destination (**id**, **city_id**, **title**, **content**, **click_count**, **created_at**)
+<!--官方攻略-->
 
 strategy (**id**, **city_id**, **title**, **content**, **user_id**, **created_at**, **updated_at**, **like_count**)
+<!--用户攻略-->
 
 remark (**id**, **user_id**, **content**, **like_count**,  **created_at**, **type**, **article_id**)
 
